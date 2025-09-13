@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  registry:
+    image: registry:2
+    container_name: registry
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      REGISTRY_AUTH: htpasswd
+      REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
+      REGISTRY_AUTH_HTPASSWD_REALM: "Registry Realm"
+    volumes:
+      - ./registry_data:/var/lib/registry
+      - ./auth:/auth:ro
+
+  registry-ui:
+    image: joxit/docker-registry-ui:latest
+    container_name: registry-ui
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      REGISTRY_TITLE=MyRegistry
+      REGISTRY_URL=http://registry:5000
+      REGISTRY_USE_BASIC_AUTH=true
+      REGISTRY_USERNAME=admin
+      REGISTRY_PASSWORD=Harbor123
+    depends_on:
+      - registry
