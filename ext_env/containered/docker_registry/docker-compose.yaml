@@ -3,29 +3,29 @@ version: "3.8"
 services:
   registry:
     image: registry:2
-    container_name: registry
+    container_name: chiz-docker-registry
     restart: always
     ports:
       - "5000:5000"
     environment:
       REGISTRY_AUTH: htpasswd
       REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
-      REGISTRY_AUTH_HTPASSWD_REALM: "Registry Realm"
+      REGISTRY_AUTH_HTPASSWD_REALM: "Private chiz Docker Registry"
+      REGISTRY_STORAGE_DELETE_ENABLED: true
     volumes:
       - ./registry_data:/var/lib/registry
       - ./auth:/auth:ro
 
   registry-ui:
     image: joxit/docker-registry-ui:latest
-    container_name: registry-ui
+    container_name: chiz-docker-registry-ui
     restart: always
     ports:
-      - "8080:80"
+      - "8088:80"
     environment:
-      REGISTRY_TITLE=MyRegistry
-      REGISTRY_URL=http://registry:5000
-      REGISTRY_USE_BASIC_AUTH=true
-      REGISTRY_USERNAME=admin
-      REGISTRY_PASSWORD=Harbor123
+      REGISTRY_UI_BASE: /registry_ui/
+      REGISTRY_TITLE: chiz_registry
+      REGISTRY_URL: https://chiz.work.gd
+      REGISTRY_BASIC_AUTH: "true"
     depends_on:
       - registry

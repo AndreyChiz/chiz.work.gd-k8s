@@ -1,15 +1,25 @@
 ## Установка и запуска
 
 1. Создать каталоги рядом с docker-compose.yml:
+
 ```sh
 mkdir auth registry_data
 ```
 
-
 2. Создать htpasswd для Registry:
+
 ```sh
-docker run --rm --entrypoint htpasswd httpd:2 -Bbn admin Harbor123 > auth/htpasswd
+docker run --rm --entrypoint htpasswd httpd:2 -Bbn achi 123y > auth/htpasswd
 ```
+
+```sh
+# альтернатива
+sudo apt-get install apache2-utils -y
+mkdir -p ./auth
+
+htpasswd -Bbn achi 123 > ./auth/htpasswd
+```
+
 3. Настройка на хорсте откуда пушить
 
 ```ssh
@@ -33,7 +43,6 @@ docker tag my-app:latest <IP_или_HOST>:5000/my-app:latest
 docker push <IP_или_HOST>:5000/my-app:latest
 ```
 
-
 🔹 Дополнительно
 
 Если Registry защищён TLS, используем его URL (https://...).
@@ -52,7 +61,27 @@ sudo systemctl restart docker
 ```
 
 6. Pull
-Если новый хост, пердлварительно выполнить шаг 3.
+   Если новый хост, пердлварительно выполнить шаг 3.
 
 ```shdocker pull <IP_или_HOST>:5000/my-app:latest
+
+```
+
+7. Push
+
+```sh
+cat > Dockerfile <<EOF
+FROM alpine:3.18
+LABEL maintainer="achi"
+RUN echo "Hello Docker Registry куфе!" > /hello.txt
+EOF
+```
+
+```sh
+sudo docker build -t chiz-work-test:777 .
+```
+
+```sh
+sudo docker tag chiz-work-test:777 chiz.work.gd/chiz-work-test:777
+sudo docker push chiz.work.gd/chiz-work-test:777
 ```
