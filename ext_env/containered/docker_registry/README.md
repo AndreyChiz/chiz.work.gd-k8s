@@ -8,8 +8,18 @@ mkdir auth registry_data
 
 2. Создать htpasswd для Registry:
 ```sh
-docker run --rm --entrypoint htpasswd httpd:2 -Bbn admin Harbor123 > auth/htpasswd
+docker run --rm --entrypoint htpasswd httpd:2 -Bbn achi 123y > auth/htpasswd
 ```
+```sh
+# альтернатива
+sudo apt-get install apache2-utils -y
+mkdir -p ./auth
+
+htpasswd -Bbn achi 123 > ./auth/htpasswd
+```
+
+
+
 3. Настройка на хорсте откуда пушить
 
 ```ssh
