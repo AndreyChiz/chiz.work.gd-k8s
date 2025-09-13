@@ -1,7 +1,6 @@
-
 > sudo cat /etc/nginx/sites-available/reverse-proxy.conf
 
-```ssh
+```sh
 server {
     listen 7443 ssl;
     server_name chiz.work.gd;
@@ -18,8 +17,8 @@ server {
 
 
     location /api/ {
-        proxy_buffering off;
-        proxy_pass http://127.0.0.1:8443; 
+	proxy_buffering off;
+        proxy_pass http://127.0.0.1:8443;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
@@ -27,9 +26,9 @@ server {
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
-        
-        proxy_cache off;
-            
+
+	proxy_cache off;
+
 }
 
     location /registry_ui/ {
@@ -47,8 +46,8 @@ server {
 
 }
 
-location /registry/ {
-    proxy_pass http://127.0.0.1:5000/;
+location /v2/ {
+    proxy_pass http://127.0.0.1:5000;
     proxy_set_header Host $host;
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -61,13 +60,14 @@ location /registry/ {
     proxy_http_version 1.1;
     chunked_transfer_encoding on;
     client_max_body_size 0;
+    proxy_request_buffering off;
 
-
-    add_header 'Access-Control-Allow-Origin' 'https://chiz.work.gd:7443' always;
-    add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, PATCH, DELETE, OPTIONS' always;
+    add_header 'Access-Control-Allow-Origin' 'https://chiz.work.gd:7443 https://chiz.work.gd' always;
+    add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, PATCH, DELETE, OPTIONS, PUSH, PULL' always;
     add_header 'Access-Control-Allow-Headers' 'Authorization,Content-Type' always;
     add_header 'Access-Control-Allow-Credentials' 'true' always;
 
+    rewrite ^/registry/(.*)$ /$1 break;
 
     if ($request_method = 'OPTIONS') {
         add_header 'Access-Control-Max-Age' 1728000;
@@ -88,5 +88,7 @@ server {
 
     return 301 https://$host$request_uri;
 }
+
+
 
 ```

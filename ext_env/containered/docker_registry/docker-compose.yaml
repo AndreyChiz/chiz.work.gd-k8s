@@ -24,7 +24,7 @@ services:
     environment:
       REGISTRY_UI_BASE: /registry_ui/
       REGISTRY_TITLE: chiz_registry
-      REGISTRY_URL: https://chiz.work.gd/registry
+      REGISTRY_URL: https://chiz.work.gd
       REGISTRY_BASIC_AUTH: "true"
     depends_on:
       - registry
