@@ -11,6 +11,7 @@ services:
       REGISTRY_AUTH: htpasswd
       REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
       REGISTRY_AUTH_HTPASSWD_REALM: "Private chiz Docker Registry"
+      REGISTRY_STORAGE_DELETE_ENABLED: true
     volumes:
       - ./registry_data:/var/lib/registry
       - ./auth:/auth:ro
