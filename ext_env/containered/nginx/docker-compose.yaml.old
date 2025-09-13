@@ -1,0 +1,23 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./conf:/etc/nginx/conf.d
+      - /home/www/public_sites:/usr/share/nginx/html:ro
+      - ./log:/var/log/nginx
+    networks:
+      - web_public
+    logging:
+      driver: "json-file"   # стандартный драйвер
+      options:
+        max-size: "5m"    # максимум 5 МБ на один файл
+        max-file: "10"      # сохранять до 10 файлов логов
+
+networks:
+  web_public:
+    driver: bridge

@@ -1,0 +1,10 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: unless-stopped
+    volumes:
+      - ./conf:/etc/nginx/conf.d
+      - /home/www/public_sites:/usr/share/nginx/html:ro
+      - ./log:/var/log/nginx
+    network_mode: "host"

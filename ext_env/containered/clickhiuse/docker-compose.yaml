@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  clickhouse:
+    image: arm64v8/clickhouse:25.7.2
+    container_name: clickhouse
+    platform: linux/arm64
+    ports:
+      - "8123:8123"  # HTTP interface
+      - "9900:9000"  # Native client
+    volumes:
+      - ./clickhouse_data:/var/lib/clickhouse
+    restart: unless-stopped
+
