@@ -17,4 +17,8 @@ nodes:
       - key: "master_node_newer"
         value: "true"
         effect: "NoSchedule"
+    extraMounts:
+      - hostPath: ./manifests       # Папка на хосте
+        containerPath: /etc/kubernetes/manifests  # Папка, которую kubelet мониторит
+        
   - role: worker

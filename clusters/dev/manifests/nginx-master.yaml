@@ -3,6 +3,8 @@ kind: Pod                        # Тип ресурса — Pod (static pod)
 metadata:
   name: nginx-master             # Имя пода
   namespace: default             # Пространство имён
+  labels:
+    app: nginx                   # <- метка для селектора         
 spec:
   containers:
     - name: nginx                # Имя контейнера
@@ -25,6 +27,3 @@ spec:
       - key: "master_node_newer"
         value: "true"
         effect: "NoSchedule"
-  extraMounts:
-        - hostPath: ./manifests       # Папка на хосте
-          containerPath: /etc/kubernetes/manifests  # Папка, которую kubelet мониторит
