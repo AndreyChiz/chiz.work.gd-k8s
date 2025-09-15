@@ -1,29 +1,153 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.1.2 Chrome/138.0.7204.243 Electron/37.4.0 Safari/537.36" version="28.1.2">
   <diagram name="Страница — 1" id="JItcxCXhAfatDefc_1aV">
-    <mxGraphModel dx="2049" dy="1180" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3043" dy="2625" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="ussUXU3Tzcspt9lPTpMm-1" value="COCAL_SERVER" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=top;fillColor=light-dark(#FFFFFF,#303053);glass=0;shadow=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" vertex="1" parent="1">
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-184" value="CLUSTER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;dashed=1;dashPattern=8 8;verticalAlign=top;strokeColor=#0000CC;" vertex="1" parent="1">
+          <mxGeometry x="387" y="-859.5" width="1687" height="874" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-185" value="NODE" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=none;strokeColor=#67AB9F;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1125" y="-813" width="908" height="747" as="geometry" />
+        </mxCell>
+        <mxCell id="ussUXU3Tzcspt9lPTpMm-1" value="COCAL_SERVER" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=top;fillColor=light-dark(#FFFFFF,#303053);glass=0;shadow=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
           <mxGeometry x="-694" y="289" width="2375" height="1395" as="geometry" />
         </mxCell>
-        <mxCell id="ussUXU3Tzcspt9lPTpMm-5" value="cluster&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#330033;align=center;verticalAlign=top;" vertex="1" parent="1">
+        <mxCell id="ussUXU3Tzcspt9lPTpMm-5" value="cluster&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#330033;align=center;verticalAlign=top;" parent="1" vertex="1">
           <mxGeometry x="-195" y="542" width="1160" height="680" as="geometry" />
         </mxCell>
-        <mxCell id="ussUXU3Tzcspt9lPTpMm-8" value="" style="group;align=left;" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="163" y="-91" width="502" height="123" as="geometry" />
+        <mxCell id="ussUXU3Tzcspt9lPTpMm-8" value="" style="group;align=left;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="-734" y="49" width="502" height="123" as="geometry" />
         </mxCell>
-        <mxCell id="ussUXU3Tzcspt9lPTpMm-6" value="docker_registry" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=center;fillColor=#190033;" vertex="1" parent="ussUXU3Tzcspt9lPTpMm-8">
-          <mxGeometry x="34" width="278" height="123" as="geometry" />
-        </mxCell>
-        <mxCell id="ussUXU3Tzcspt9lPTpMm-7" value="5000:5000" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="ussUXU3Tzcspt9lPTpMm-8">
-          <mxGeometry y="24.6" width="73" height="39.36000000000001" as="geometry" />
-        </mxCell>
-        <mxCell id="ussUXU3Tzcspt9lPTpMm-10" value="&lt;div style=&quot;font-size: 14px; line-height: 18px; white-space: pre;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: rgb(246, 246, 246);&quot;&gt; - ./registry_data:/var/lib/registry&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: rgb(246, 246, 246);&quot;&gt; - ./auth:/auth:ro&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;align=left;" vertex="1" parent="ussUXU3Tzcspt9lPTpMm-8">
+        <mxCell id="ussUXU3Tzcspt9lPTpMm-10" value="&lt;div style=&quot;font-size: 14px; line-height: 18px; white-space: pre;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: rgb(246, 246, 246);&quot;&gt; - ./registry_data:/var/lib/registry&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;color: rgb(246, 246, 246);&quot;&gt; - ./auth:/auth:ro&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;align=left;" parent="ussUXU3Tzcspt9lPTpMm-8" vertex="1">
           <mxGeometry x="312" y="28.817142857142862" width="208" height="39.36000000000001" as="geometry" />
         </mxCell>
-        <mxCell id="ussUXU3Tzcspt9lPTpMm-16" value="&lt;span data-mx-given-colors=&quot;{&amp;quot;color&amp;quot;:&amp;quot;rgb(235, 96, 107)&amp;quot;}&quot; style=&quot;forced-color-adjust: none; font-family: &amp;quot;Droid Sans Mono&amp;quot;, &amp;quot;monospace&amp;quot;, monospace; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;environment&lt;/span&gt;&lt;span data-mx-given-colors=&quot;{&amp;quot;color&amp;quot;:&amp;quot;rgb(95, 179, 179)&amp;quot;}&quot; style=&quot;forced-color-adjust: none; font-family: &amp;quot;Droid Sans Mono&amp;quot;, &amp;quot;monospace&amp;quot;, monospace; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;:&lt;br style=&quot;forced-color-adjust: none; box-shadow: none !important;&quot;&gt;&lt;/span&gt;&lt;span data-mx-given-colors=&quot;{&amp;quot;color&amp;quot;:&amp;quot;rgb(235, 96, 107)&amp;quot;}&quot; style=&quot;forced-color-adjust: none; font-family: &amp;quot;Droid Sans Mono&amp;quot;, &amp;quot;monospace&amp;quot;, monospace; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;REGISTRY_AUTH&lt;/span&gt;&lt;span data-mx-given-colors=&quot;{&amp;quot;color&amp;quot;:&amp;quot;rgb(95, 179, 179)&amp;quot;}&quot; style=&quot;forced-color-adjust: none; font-family: &amp;quot;Droid Sans Mono&amp;quot;, &amp;quot;monospace&amp;quot;, monospace; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;: &lt;/span&gt;&lt;span data-mx-given-colors=&quot;{&amp;quot;color&amp;quot;:&amp;quot;rgb(153, 199, 148)&amp;quot;}&quot; style=&quot;forced-color-adjust: none; font-family: &amp;quot;Droid Sans Mono&amp;quot;, &amp;quot;monospace&amp;quot;, monospace; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;htpasswd&lt;br style=&quot;forced-color-adjust: none; box-shadow: none !important;&quot;&gt;&lt;/span&gt;&lt;span data-mx-given-colors=&quot;{&amp;quot;color&amp;quot;:&amp;quot;rgb(235, 96, 107)&amp;quot;}&quot; style=&quot;forced-color-adjust: none; font-family: &amp;quot;Droid Sans Mono&amp;quot;, &amp;quot;monospace&amp;quot;, monospace; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;REGISTRY_AUTH_HTPASSWD_PATH&lt;/span&gt;&lt;span data-mx-given-colors=&quot;{&amp;quot;color&amp;quot;:&amp;quot;rgb(95, 179, 179)&amp;quot;}&quot; style=&quot;forced-color-adjust: none; font-family: &amp;quot;Droid Sans Mono&amp;quot;, &amp;quot;monospace&amp;quot;, monospace; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;: &lt;/span&gt;&lt;span data-mx-given-colors=&quot;{&amp;quot;color&amp;quot;:&amp;quot;rgb(153, 199, 148)&amp;quot;}&quot; style=&quot;forced-color-adjust: none; font-family: &amp;quot;Droid Sans Mono&amp;quot;, &amp;quot;monospace&amp;quot;, monospace; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;/auth/htpasswd&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="ussUXU3Tzcspt9lPTpMm-8">
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-192" value="" style="group" vertex="1" connectable="0" parent="ussUXU3Tzcspt9lPTpMm-8">
+          <mxGeometry width="330" height="123" as="geometry" />
+        </mxCell>
+        <mxCell id="ussUXU3Tzcspt9lPTpMm-6" value="docker_registry" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=center;fillColor=#190033;" parent="APPY8IDEdhxF_OgAI5aJ-192" vertex="1">
+          <mxGeometry x="34" width="278" height="123" as="geometry" />
+        </mxCell>
+        <mxCell id="ussUXU3Tzcspt9lPTpMm-7" value="5000:5000" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" parent="APPY8IDEdhxF_OgAI5aJ-192" vertex="1">
+          <mxGeometry y="24.6" width="73" height="39.36000000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="ussUXU3Tzcspt9lPTpMm-16" value="&lt;span data-mx-given-colors=&quot;{&amp;quot;color&amp;quot;:&amp;quot;rgb(235, 96, 107)&amp;quot;}&quot; style=&quot;forced-color-adjust: none; font-family: &amp;quot;Droid Sans Mono&amp;quot;, &amp;quot;monospace&amp;quot;, monospace; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;environment&lt;/span&gt;&lt;span data-mx-given-colors=&quot;{&amp;quot;color&amp;quot;:&amp;quot;rgb(95, 179, 179)&amp;quot;}&quot; style=&quot;forced-color-adjust: none; font-family: &amp;quot;Droid Sans Mono&amp;quot;, &amp;quot;monospace&amp;quot;, monospace; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;:&lt;br style=&quot;forced-color-adjust: none; box-shadow: none !important;&quot;&gt;&lt;/span&gt;&lt;span data-mx-given-colors=&quot;{&amp;quot;color&amp;quot;:&amp;quot;rgb(235, 96, 107)&amp;quot;}&quot; style=&quot;forced-color-adjust: none; font-family: &amp;quot;Droid Sans Mono&amp;quot;, &amp;quot;monospace&amp;quot;, monospace; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;REGISTRY_AUTH&lt;/span&gt;&lt;span data-mx-given-colors=&quot;{&amp;quot;color&amp;quot;:&amp;quot;rgb(95, 179, 179)&amp;quot;}&quot; style=&quot;forced-color-adjust: none; font-family: &amp;quot;Droid Sans Mono&amp;quot;, &amp;quot;monospace&amp;quot;, monospace; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;: &lt;/span&gt;&lt;span data-mx-given-colors=&quot;{&amp;quot;color&amp;quot;:&amp;quot;rgb(153, 199, 148)&amp;quot;}&quot; style=&quot;forced-color-adjust: none; font-family: &amp;quot;Droid Sans Mono&amp;quot;, &amp;quot;monospace&amp;quot;, monospace; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;htpasswd&lt;br style=&quot;forced-color-adjust: none; box-shadow: none !important;&quot;&gt;&lt;/span&gt;&lt;span data-mx-given-colors=&quot;{&amp;quot;color&amp;quot;:&amp;quot;rgb(235, 96, 107)&amp;quot;}&quot; style=&quot;forced-color-adjust: none; font-family: &amp;quot;Droid Sans Mono&amp;quot;, &amp;quot;monospace&amp;quot;, monospace; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;REGISTRY_AUTH_HTPASSWD_PATH&lt;/span&gt;&lt;span data-mx-given-colors=&quot;{&amp;quot;color&amp;quot;:&amp;quot;rgb(95, 179, 179)&amp;quot;}&quot; style=&quot;forced-color-adjust: none; font-family: &amp;quot;Droid Sans Mono&amp;quot;, &amp;quot;monospace&amp;quot;, monospace; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;: &lt;/span&gt;&lt;span data-mx-given-colors=&quot;{&amp;quot;color&amp;quot;:&amp;quot;rgb(153, 199, 148)&amp;quot;}&quot; style=&quot;forced-color-adjust: none; font-family: &amp;quot;Droid Sans Mono&amp;quot;, &amp;quot;monospace&amp;quot;, monospace; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;/auth/htpasswd&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontColor=default;labelBackgroundColor=none;" parent="APPY8IDEdhxF_OgAI5aJ-192" vertex="1">
           <mxGeometry x="43" y="66.06622857142862" width="287" height="45.6857142857143" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-63" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1644" y="-577" width="37" height="346" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-191" value="" style="group" vertex="1" connectable="0" parent="APPY8IDEdhxF_OgAI5aJ-63">
+          <mxGeometry x="15" y="86" width="37" height="252" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-64" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="APPY8IDEdhxF_OgAI5aJ-191">
+          <mxGeometry width="37" height="252" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-65" value="localhost" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;" vertex="1" parent="APPY8IDEdhxF_OgAI5aJ-191">
+          <mxGeometry x="-11.5" y="115.00420382165603" width="60" height="16.528662420382165" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-163" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="APPY8IDEdhxF_OgAI5aJ-149" target="APPY8IDEdhxF_OgAI5aJ-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-162" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="APPY8IDEdhxF_OgAI5aJ-160" target="APPY8IDEdhxF_OgAI5aJ-127">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-189" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1196" y="-775" width="621" height="224" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-9" value="NGINX_POD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;verticalAlign=top;" vertex="1" parent="APPY8IDEdhxF_OgAI5aJ-189">
+          <mxGeometry y="18" width="621" height="206" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-12" value="10.244.1.1:80&lt;div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;metadata:&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt; labels:&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp; &amp;nbsp; app: nginx&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="APPY8IDEdhxF_OgAI5aJ-189">
+          <mxGeometry y="43" width="101" height="78.18" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="APPY8IDEdhxF_OgAI5aJ-189" source="APPY8IDEdhxF_OgAI5aJ-8" target="APPY8IDEdhxF_OgAI5aJ-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-45" value="" style="group" vertex="1" connectable="0" parent="APPY8IDEdhxF_OgAI5aJ-189">
+          <mxGeometry x="150" y="46" width="254" height="127" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-1" value="nginx(docker)" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=top;" vertex="1" parent="APPY8IDEdhxF_OgAI5aJ-45">
+          <mxGeometry width="254" height="127" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-8" value="0.0.0.0:80" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="APPY8IDEdhxF_OgAI5aJ-45">
+          <mxGeometry y="28.819999999999993" width="73" height="39.36000000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-68" value="" style="group" vertex="1" connectable="0" parent="APPY8IDEdhxF_OgAI5aJ-189">
+          <mxGeometry x="443" width="37" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-69" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="APPY8IDEdhxF_OgAI5aJ-68">
+          <mxGeometry y="46.72832369942196" width="37" height="125.27167630057802" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-70" value="localhost" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;" vertex="1" parent="APPY8IDEdhxF_OgAI5aJ-68">
+          <mxGeometry x="-11.5" y="103.89804351827988" width="60" height="8.216560509554139" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-18" value="APP_POD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;verticalAlign=top;align=center;arcSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1207" y="-521" width="621" height="382" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="APPY8IDEdhxF_OgAI5aJ-22">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1307.9999999999995" y="-445.5000000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="APPY8IDEdhxF_OgAI5aJ-18" target="APPY8IDEdhxF_OgAI5aJ-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-21" value="fastapi(docker)" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1372" y="-494" width="254" height="127" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-22" value="0.0.0.0:8000" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1372" y="-465.18" width="89" height="39.36" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-30" value="127.0.0.1:5555" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1537" y="-466" width="89" height="39.36" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-31" value="super_logger(docker)" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1372" y="-337" width="254" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="APPY8IDEdhxF_OgAI5aJ-31" target="APPY8IDEdhxF_OgAI5aJ-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.978;entryY=0.616;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="APPY8IDEdhxF_OgAI5aJ-37" target="APPY8IDEdhxF_OgAI5aJ-128">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1307.9999999999995" y="-278.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-37" value="0.0.0.0:8050" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1372" y="-299" width="89" height="39.36" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.135;entryY=0.069;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="APPY8IDEdhxF_OgAI5aJ-30" target="APPY8IDEdhxF_OgAI5aJ-64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-127" value="10.244.1.2:8000&lt;div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;metadata:&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp;&lt;font style=&quot;color: rgb(204, 0, 0);&quot;&gt; labels:&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp; &amp;nbsp; app: app&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1207" y="-485.40999999999997" width="101" height="78.18" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-128" value="10.244.1.2:8050&lt;div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;metadata:&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt; labels:&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp; &amp;nbsp; app: logger&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1207" y="-317.18" width="101" height="78.18" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-180" value="&lt;div&gt;CMD [&quot;uvicorn&quot;, &quot;main:app&quot;, &quot;--host&quot;, &quot;0.0.0.0&quot;, &quot;--port&quot;, &quot;8000&quot;]&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1377" y="-403" width="236" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-190" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1245.5" y="6.5" as="sourcePoint" />
+            <mxPoint x="1245.5" y="6.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-83" value="nginx(SERVICE)" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=top;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="414" y="-773" width="254" height="274" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-82" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="414" y="-773" width="254" height="127" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-84" value="0.0.0.0:80" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="APPY8IDEdhxF_OgAI5aJ-82">
+          <mxGeometry y="28.819999999999993" width="73" height="39.36000000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-149" value="&lt;div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;metadata:&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;selector:&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp; &amp;nbsp; app: nginx&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="567" y="-740.59" width="101" height="62.18" as="geometry" />
+        </mxCell>
+        <mxCell id="APPY8IDEdhxF_OgAI5aJ-160" value="&lt;div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;metadata:&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp;&lt;font style=&quot;color: rgb(204, 0, 0);&quot;&gt;selector:&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp; &amp;nbsp; app: nginx&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="567" y="-641" width="101" height="62.18" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
