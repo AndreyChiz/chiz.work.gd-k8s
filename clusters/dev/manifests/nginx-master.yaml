@@ -1,0 +1,30 @@
+apiVersion: v1                  # Версия API для Pod
+kind: Pod                        # Тип ресурса — Pod (static pod)
+metadata:
+  name: nginx-master             # Имя пода
+  namespace: default             # Пространство имён
+spec:
+  containers:
+    - name: nginx                # Имя контейнера
+      image: nginx:stable        # Docker-образ nginx
+      ports:
+        - containerPort: 80      # Порт внутри контейнера
+      resources:
+        limits:
+          cpu: "500m"            # Максимальное потребление CPU
+          memory: "256Mi"        # Максимальное потребление памяти
+        requests:
+          cpu: "100m"            # Запрашиваемое количество CPU
+          memory: "128Mi"        # Запрашиваемое количество памяти
+  tolerations:
+    # Позволяет запускаться на ноде если необходимо
+      - key: "master_node_may_be"
+        value: "nginx"
+        effect: "PreferNoSchedule"
+      # Проход на мастерноду
+      - key: "master_node_newer"
+        value: "true"
+        effect: "NoSchedule"
+  extraMounts:
+        - hostPath: ./manifests       # Папка на хосте
+          containerPath: /etc/kubernetes/manifests  # Папка, которую kubelet мониторит
