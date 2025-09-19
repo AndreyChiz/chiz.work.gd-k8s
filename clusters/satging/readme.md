@@ -252,3 +252,32 @@ sudo systemctl restart kubelet
 systemctl status kubelet
 
 ```
+
+
+
+```sh
+sudo iptables-save | sudo tee /etc/iptables/rules.v4  
+sudo ip6tables-save | sudo tee /etc/iptables/rules.v6
+```
+
+/etc/systemd/system/iptables-kuber.service
+```sh
+[Unit]
+Description=Restore iptables rules
+After=network.target
+Wants=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/iptables-restore /etc/iptables/rules.v4
+ExecStartPost=/usr/sbin/ip6tables-restore /etc/iptables/rules.v6
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```sh
+# запрет изменения resolvconf
+sudo chattr +i /etc/resolv.conf
+```
