@@ -225,3 +225,30 @@ Then you can join any number of worker nodes by running the following on each as
 kubeadm join 10.195.215.51:6443 --token hnjblz.flfx7lxarkamu9bm \
 	--discovery-token-ca-cert-hash sha256:edde0e30633bd0a5b71036f8179d3c1e51e78b3c58d11ed1bfdaf1fe9dda529e 
 ```
+
+```sh
+sudo mkdir -p /usr/libexec/cni
+sudo ln -s /opt/cni/bin/* /usr/libexec/cni/
+
+sudo systemctl restart kubelet
+kubectl delete pod -n kube-system -l k8s-app=kube-dns
+kubectl get pods -n kube-system -w
+
+
+
+# 1. Создаём директорию и файл с фиксированными DNS-серверами
+sudo mkdir -p /etc/kubernetes
+echo -e "nameserver 8.8.8.8\nnameserver 8.8.4.4" | sudo tee /etc/kubernetes/resolv.conf
+
+# 2. Создаём или редактируем файл настроек kubelet для systemd
+sudo mkdir -p /etc/default
+echo 'KUBELET_EXTRA_ARGS="--resolv-conf=/etc/kubernetes/resolv.conf"' | sudo tee /etc/default/kubelet
+
+# 3. Перезагружаем systemd и kubelet
+sudo systemctl daemon-reload
+sudo systemctl restart kubelet
+
+# 4. Проверяем, что kubelet запущен
+systemctl status kubelet
+
+```
