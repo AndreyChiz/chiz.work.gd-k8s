@@ -198,7 +198,13 @@ debug: false
 ```
 
 ```sh
-sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=Swap --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers
+sudo kubeadm init \
+  --apiserver-advertise-address=0.0.0.0 \
+  --apiserver-cert-extra-sans=127.0.0.1,localhost \
+  --pod-network-cidr=10.244.0.0/16 \
+  --ignore-preflight-errors=Swap \
+  --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers
+
 ```
 
 
