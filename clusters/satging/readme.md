@@ -431,3 +431,9 @@ kubectl run test-ping -it --image=busybox:1.36 --restart=Never -- /bin/sh
 ping 8.8.8.8
 ping 10.244.0.3
 ```
+
+#------------------------------------------------
+
+```sh
+kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+```
