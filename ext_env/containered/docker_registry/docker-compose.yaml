@@ -23,9 +23,9 @@ services:
     ports:
       - "8088:80"
     environment:
-      REGISTRY_UI_BASE: /registry_ui/
+      REGISTRY_UI_BASE: /ui/
       REGISTRY_TITLE: chiz_registry
-      REGISTRY_URL: https://chiz.work.gd
+      REGISTRY_URL: https://reg.chiz.work.gd
       REGISTRY_BASIC_AUTH: "true"
     depends_on:
       - registry

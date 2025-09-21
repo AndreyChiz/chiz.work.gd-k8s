@@ -437,3 +437,19 @@ ping 10.244.0.3
 ```sh
 kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
 ```
+
+```sh
+# Настройка приватного Docker Registry для всех нод
+# Файл: /etc/containerd/config.toml на каждой ноде
+# Добавляем туда:
+[plugins."io.containerd.grpc.v1.cri".registry.mirrors."reg.chiz.work.gd:5000"]
+  endpoint = ["http://reg.chiz.work.gd:5000"]
+[plugins."io.containerd.grpc.v1.cri".registry.configs."reg.chiz.work.gd:5000".auth]
+  username = "achi"
+  password = "123"
+```
+
+```sh
+sudo systemctl restart containerd
+```
+можно тянуть образы чрез->> image: reg.chiz.work.gd/myapp:latest
