@@ -1,3 +1,10 @@
+# Содержание
+- [Установка и запуска](#установка-и-запуска)
+- [Удаление образов](#удаление-образов)
+
+
+
+
 ## Установка и запуска
 
 1. Создать каталоги рядом с docker-compose.yml:
@@ -84,4 +91,38 @@ sudo docker build -t chiz-work-test:777 .
 ```sh
 sudo docker tag chiz-work-test:777 chiz.work.gd/chiz-work-test:777
 sudo docker push chiz.work.gd/chiz-work-test:777
+```
+
+
+## Удаление образов 
+### Установка cli утилиты
+
+```sh
+curl -LO https://github.com/genuinetools/reg/releases/download/v0.14.0/reg-linux-arm64       
+chmod +x reg-linux-arm64
+sudo mv reg-linux-arm64 /usr/local/bin/reg
+```
+
+```sh 
+reg -u achi -p 123  ls reg.chiz.work.gd
+
+Repositories for reg.chiz.work.gd
+REPO                TAGS
+chiz-api-gateway    0.0.1a, 0.0.2a, 0.0.3a
+chiz-work-test      777
+gateway             latest
+```
+
+```sh
+reg -u achi -p 123 rm reg.chiz.work.gd/chiz-api-gateway:0.0.1a
+reg -u achi -p 123 rm reg.chiz.work.gd/chiz-api-gateway:0.0.2a
+
+
+#После удаления запускаем garbage
+docker stop chiz-docker-registry
+docker run --rm \
+  -v /home/www/src/chiz.work.gd-k8s/ext_env/containered/docker_registry/registry_data/:/var/lib/registry \
+  registry:2 garbage-collect /etc/docker/registry/config.yml
+docker start chiz-docker-registry
+
 ```
