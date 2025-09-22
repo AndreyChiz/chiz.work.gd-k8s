@@ -16,3 +16,13 @@ sudo certbot --nginx -d reg.chiz.work.gd
 sudo nginx -t
 sudo systemctl reload nginx
 ```
+
+## Healthcheck
+
+```sh
+# privat docker_registry
+curl -u achi:123 -k https://reg.chiz.work.gd/v2/_catalog 
+
+# kubernates
+kubectl get nodes
+```
