@@ -5400,3 +5400,8 @@
 2025/09/13 05:08:15 [info] 24#24: *77 client sent invalid method while reading client request line, client: 127.0.0.1, server: chiz.work.gd, request: " u  q],|‹ŽÂÏÏjY«µZ6œ ˜‘HÊ'­°¨®u—q¯   À/À+ÀÀÀÀ	ÀÀ"
 2025/09/13 05:08:15 [info] 24#24: *78 client sent invalid method while reading client request line, client: 127.0.0.1, server: chiz.work.gd, request: "              "
 2025/09/13 05:11:31 [info] 24#24: *79 client 127.0.0.1 closed keepalive connection
+2025/09/24 13:40:26 [info] 20#20: *1 client sent invalid method while reading client request line, client: 127.0.0.1, server: chiz.work.gd, request: "  ü)åÄÕä—±/F"
+2025/09/24 13:40:26 [info] 20#20: *1 recv() failed (104: Connection reset by peer) while reading client request line, client: 127.0.0.1, server: chiz.work.gd, request: "  ü)åÄÕä—±/F"
+2025/09/24 13:43:09 [info] 21#21: *2 client sent invalid method while reading client request line, client: 127.0.0.1, server: chiz.work.gd, request: "  ü÷[~5:Í¾÷L{KÍ"
+2025/09/24 13:43:09 [info] 21#21: *2 recv() failed (104: Connection reset by peer) while reading client request line, client: 127.0.0.1, server: chiz.work.gd, request: "  ü÷[~5:Í¾÷L{KÍ"
+2025/09/24 13:43:29 [info] 20#20: *3 client 127.0.0.1 closed keepalive connection

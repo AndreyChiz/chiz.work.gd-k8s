@@ -126,3 +126,7 @@ docker run --rm \
 docker start chiz-docker-registry
 
 ```
+
+```sh
+ docker exec -it chiz-docker-registry registry garbage-collect /etc/docker/registry/config.yml  
+ ```

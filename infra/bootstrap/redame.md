@@ -80,6 +80,30 @@ kubectl taint nodes --all node-role.kubernetes.io/master-
 kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
 ```
 
+- ingress-nginx
+```sh
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.9.1/deploy/static/provider/cloud/deploy.yaml
+```
+селектор и неймспейс сервиса nodePort который смотрит наружу должен совпадать с деплойментом который устанавливается через команду выше.
+по умолчанию эти значения в сервисе:
+service - nodePort
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ingress-nginx
+  namespace: ingress-nginx
+spec:
+  type: NodePort
+  selector:
+    app.kubernetes.io/name: ingress-nginx
+  ports:
+    - name: https
+      port: 443           # внутренний порт сервиса
+      targetPort: 443     # порт контейнера Ingress Controller
+      nodePort: 30000     # порт ноды, на который будет приходить туннель
+```
+
 - Docker Registry
 ```sh
 # /etc/containerd/config.toml на каждой ноде
