@@ -4,6 +4,6 @@ kind: Kustomization
 resources:
   # - ../../base/namespaces
   - ../../base/ingress-controller
-  # - ../../services/chiz-gateway
+  - ../../services/chiz-gateway
   # - ../../base/secrets
-  
+  # - ../../base/cert-manager

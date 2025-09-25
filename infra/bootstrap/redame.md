@@ -104,6 +104,28 @@ spec:
       nodePort: 30000     # порт ноды, на который будет приходить туннель
 ```
 
+- cert-manager
+```sh
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.16.2/cert-manager.yaml
+
+```
+удаление
+```sh
+
+kubectl delete -f https://github.com/cert-manager/cert-manager/releases/download/v1.16.2/cert-manager.yaml
+kubectl delete deployment --all -n cert-manager
+kubectl delete pod --all -n cert-manager
+kubectl delete service --all -n cert-manager
+kubectl delete crd certificaterequests.cert-manager.io \
+  certificates.cert-manager.io \
+  challenges.acme.cert-manager.io \
+  clusterissuers.cert-manager.io \
+  issuers.cert-manager.io \
+  orders.acme.cert-manager.io
+kubectl delete ns cert-manager
+
+```
+
 - Docker Registry
 ```sh
 # /etc/containerd/config.toml на каждой ноде
