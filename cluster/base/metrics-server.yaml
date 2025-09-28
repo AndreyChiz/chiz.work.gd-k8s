@@ -22,7 +22,7 @@ spec:
       serviceAccountName: metrics-server
       containers:
         - name: metrics-server
-          image: k8s.gcr.io/metrics-server/metrics-server:v0.12.5
+          image: k8s.gcr.io/metrics-server/metrics-server:latest
           args:
             - --kubelet-insecure-tls
             - --kubelet-preferred-address-types=InternalIP,Hostname,ExternalIP
