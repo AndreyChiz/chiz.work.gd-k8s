@@ -1,11 +1,11 @@
 Логи
 ```sh
- stern --all-namespaces .
+stern --all-namespaces .
 ```
 
 Синхронизация
 ```sh
- kubectl apply -k .   
+kubectl apply -k .   
 ```
 
 Откат
