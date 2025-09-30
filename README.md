@@ -13,6 +13,11 @@
 - http://reg.chiz.work.gd/ui - веб интерфейс приватного репозитория
 - http://kub.chiz.work.gd - kube-apiserver
 
+Временноые: 
+
+- localhost:30002/dashboard - Traefik
+- localhost:30003 - Argocd 
+
 
 
 
