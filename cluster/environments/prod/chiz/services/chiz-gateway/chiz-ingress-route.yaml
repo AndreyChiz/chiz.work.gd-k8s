@@ -5,10 +5,12 @@ metadata:
   namespace: chiz
 spec:
   entryPoints:
-    - web
+    - websecure # заменили web на websecure
   routes:
     - match: Host(`chiz.work.gd`)
       kind: Rule
       services:
         - name: gateway-svc
           port: 80
+  tls:
+    certResolver: myresolver # должен совпадать с Traefik ACME resolver
