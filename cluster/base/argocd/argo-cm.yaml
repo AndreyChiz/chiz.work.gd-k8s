@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+  namespace: argocd
+data:
+  # пустой ConfigMap, чтобы Kustomize видел объект
+  # патчи будут добавлять нужные данные

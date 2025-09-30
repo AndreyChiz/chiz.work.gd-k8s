@@ -7,4 +7,10 @@ resources:
   - argocd-ns.yaml
   - install.yaml
   - argocd-cluster-app.yaml
+  - argocd-user-achi.yaml
 
+patches:
+  - target:
+      kind: ConfigMap
+      name: argocd-cm
+    path: argocd-cm-patch.yaml

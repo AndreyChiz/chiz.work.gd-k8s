@@ -27,11 +27,11 @@ argocd version
 генерим пароль
 ```sh
 sudo apt install apache2-utils -y
-htpasswd -bnBC 10 "" NewPass123 | tr -d ':\n'
+htpasswd -bnBC 10 "" 123 | tr -d ':\n'
 
 # применяем пароль
 kubectl -n argocd patch secret argocd-secret \
-  -p '{"stringData": {"admin.password": "<сгенерированный хеш>","admin.passwordMtime": "'$(date +%FT%T%Z)'"}}'
+  -p '{"stringData": {"admin.password": "$2y$10$W6P.yhesHWybj9tAzW2AI.hU64cCbc1ab82cd7n327plPndWveVji","admin.passwordMtime": "'$(date +%FT%T%Z)'"}}'
 ```
 ```sh
 kubectl port-forward svc/argocd-server -n argocd 8080:80
