@@ -3,3 +3,5 @@ kind: Kustomization
 
 resources:
     - chiz-gateway-de.yaml
+    - chiz-ingress-route.yaml
+    - chiz-gateway-svc.yaml

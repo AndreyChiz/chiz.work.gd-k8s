@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gateway-svc
+  namespace: chiz
+spec:
+  selector:
+    app: gateway
+  ports:
+    - protocol: TCP
+      port: 80         # порт внутри кластера (Traefik будет на него смотреть)
+      targetPort: 8002 # порт контейнера
+  type: ClusterIP

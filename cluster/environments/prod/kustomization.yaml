@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
    - "../../base"
    # - "../../base/argocd"
-   # - "./chiz"
+   - "./chiz"

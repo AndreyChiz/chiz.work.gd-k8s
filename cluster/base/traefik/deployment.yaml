@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: traefik
+  namespace: traefik
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: traefik
+  template:
+    metadata:
+      labels:
+        app: traefik
+    spec:
+      serviceAccountName: traefik
+      initContainers:
+      - name: init-acme
+        image: busybox
+        command: ["sh", "-c", "mkdir -p /data && touch /data/acme.json && chmod 600 /data/acme.json"]
+        volumeMounts:
+        - name: acme
+          mountPath: /data
+      containers:
+      - name: traefik
+        image: traefik:v3.5.3
+        args:
+          - "--api.dashboard=true"
+          - "--entrypoints.web.address=:80"
+          - "--entrypoints.websecure.address=:443"
+          - "--providers.kubernetescrd"
+          - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
+          - "--certificatesresolvers.myresolver.acme.email=you@example.com"
+          - "--certificatesresolvers.myresolver.acme.storage=/data/acme.json"
+        ports:
+        - name: web
+          containerPort: 80
+        - name: websecure
+          containerPort: 443
+        - name: dashboard
+          containerPort: 8080
+        resources:
+          requests:
+            cpu: "50m"
+            memory: "64Mi"
+          limits:
+            cpu: "200m"
+            memory: "128Mi"
+        volumeMounts:
+        - name: acme
+          mountPath: /data
+      volumes:
+      - name: acme
+        persistentVolumeClaim:
+          claimName: traefik-acme-pvc
