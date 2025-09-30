@@ -8,6 +8,7 @@ resources:
   - install.yaml
   - argocd-cluster-app.yaml
   - argocd-user-achi.yaml
+  - argo-svc.yaml
 
 patches:
   - target:
