@@ -1,4 +1,3 @@
-Логи
 ```sh
 stern --all-namespaces .
 ```
