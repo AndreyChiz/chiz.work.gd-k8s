@@ -1,0 +1,20 @@
+# cluster/base/argo-cd/values.yaml
+
+# отключаем HA и redis-ha для экономии ресурсов
+redis-ha:
+  enabled: false
+
+# используем встроенный redis
+redis:
+  enabled: true
+
+# сервер ArgoCD
+server:
+  # включаем NodePort для доступа снаружи
+  service:
+    type: NodePort
+    nodePortHttp: 30080
+    nodePortHttps: 30443
+
+  ingress:
+    enabled: false  # включи true, если будешь делать Ingress/Traefik/Nginx

@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: base-apps
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:you/chiz.work.gd-k8s.git
+    targetRevision: main
+    path: cluster/base/apps
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
