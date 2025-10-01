@@ -34,6 +34,6 @@ kubectl -n argocd patch secret argocd-secret \
   -p '{"stringData": {"admin.password": "$2y$10$W6P.yhesHWybj9tAzW2AI.hU64cCbc1ab82cd7n327plPndWveVji","admin.passwordMtime": "'$(date +%FT%T%Z)'"}}'
 ```
 ```sh
-kubectl port-forward svc/argocd-server -n argocd 8080:80
+
 ```
 дальше в ui - login: admin Password NewPass123
