@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: chiz
-  labels:
-    environment: dev
-    team: backend
-  annotations:
-    description: "Namespace для домена chiz.work.gd"

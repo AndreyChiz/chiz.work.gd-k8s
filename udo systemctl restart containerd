@@ -1,0 +1,24 @@
+[0;1;32m●[0m containerd.service - containerd container runtime
+     Loaded: loaded (]8;;file://achi-11/usr/lib/systemd/system/containerd.service/usr/lib/systemd/system/containerd.service]8;;; [0;1;32menabled[0m; preset: [0;1;32menabled[0m)
+     Active: [0;1;32mactive (running)[0m since Thu 2025-10-02 12:58:44 +04; 1h 6min ago
+       Docs: ]8;;https://containerd.iohttps://containerd.io]8;;
+    Process: 1187 ExecStartPre=/sbin/modprobe overlay (code=exited, status=0/SUCCESS)
+   Main PID: 1207 (containerd)
+      Tasks: 33
+     Memory: 27.2M (peak: 87.6M swap: 8.2M swap peak: 21.1M)
+        CPU: 9.151s
+     CGroup: /system.slice/containerd.service
+             ├─[0;38;5;245m1207 /usr/bin/containerd[0m
+             ├─[0;38;5;245m1982 /usr/bin/containerd-shim-runc-v2 -namespace moby -id 1cd81a149769a8dad0749a012ab6d91d9e16c49ff3300809c3572d1c37ddac48 -address /run/containerd/containerd.sock[0m
+             └─[0;38;5;245m1983 /usr/bin/containerd-shim-runc-v2 -namespace moby -id bfefdaef2bcf7aefc1d7ce6d4d4aef2d2c0bc8e5a4838842933838a45f73e86f -address /run/containerd/containerd.sock[0m
+
+окт 02 12:58:44 achi-11 containerd[1207]: time="2025-10-02T12:58:44.160364080+04:00" level=info msg="skip loading plugin \"io.containerd.tracing.processor.v1.otlp\"..." error="skip plugin: tracing endpoint not configured" type=io.containerd.tracing.processor.v1
+окт 02 12:58:44 achi-11 containerd[1207]: time="2025-10-02T12:58:44.160404294+04:00" level=info msg="loading plugin \"io.containerd.internal.v1.tracing\"..." type=io.containerd.internal.v1
+окт 02 12:58:44 achi-11 containerd[1207]: time="2025-10-02T12:58:44.160446239+04:00" level=info msg="skip loading plugin \"io.containerd.internal.v1.tracing\"..." error="skip plugin: tracing endpoint not configured" type=io.containerd.internal.v1
+окт 02 12:58:44 achi-11 containerd[1207]: time="2025-10-02T12:58:44.160475851+04:00" level=info msg="loading plugin \"io.containerd.grpc.v1.healthcheck\"..." type=io.containerd.grpc.v1
+окт 02 12:58:44 achi-11 containerd[1207]: time="2025-10-02T12:58:44.160684413+04:00" level=info msg="loading plugin \"io.containerd.nri.v1.nri\"..." type=io.containerd.nri.v1
+окт 02 12:58:44 achi-11 containerd[1207]: time="2025-10-02T12:58:44.160718187+04:00" level=info msg="NRI interface is disabled by configuration."
+окт 02 12:58:44 achi-11 containerd[1207]: time="2025-10-02T12:58:44.168050614+04:00" level=info msg=serving... address=/run/containerd/containerd.sock.ttrpc
+окт 02 12:58:44 achi-11 containerd[1207]: time="2025-10-02T12:58:44.168856061+04:00" level=info msg=serving... address=/run/containerd/containerd.sock
+окт 02 12:58:44 achi-11 containerd[1207]: time="2025-10-02T12:58:44.169020499+04:00" level=info msg="containerd successfully booted in 0.191819s"
+окт 02 12:58:44 achi-11 systemd[1]: Started containerd.service - containerd container runtime.

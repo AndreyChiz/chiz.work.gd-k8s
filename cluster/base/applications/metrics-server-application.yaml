@@ -1,17 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: base-apps
+  name: metrics-server
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: "https://github.com/AndreyChiz/chiz.work.gd-GitOps"
     targetRevision: main
-    path: "cluster/base/applications" # берёт только *.yaml в этой папке
+    path: "cluster/base/metrics-server"
+    kustomize: {} # включаем kustomize
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: kube-system
   syncPolicy:
     automated:
       prune: true
@@ -21,3 +22,9 @@ spec:
       - PruneLast=true
       - ApplyOutOfSyncOnly=true
       - Validate=true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m

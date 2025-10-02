@@ -171,3 +171,20 @@ kubectl run test-ping -it --image=busybox:1.36 --restart=Never -- /bin/sh
 ping 8.8.8.8
 ping 10.244.0.3
 ```
+fix containerd.crush
+
+```sh
+
+
+sudo rm -rf /var/lib/containerd
+sudo systemctl restart containerd
+
+#если не помогло
+sudo systemctl stop containerd
+sudo rm -rf /var/lib/containerd/io.containerd.runtime.v2.task/*
+sudo rm -rf /var/lib/containerd/io.containerd.grpc.v1.cri/sandboxes/*
+sudo rm -rf /run/containerd/io.containerd.runtime.v2.task/*
+sudo rm -rf /run/containerd/io.containerd.grpc.v1.cri/sandboxes/*
+sudo systemctl start containerd
+
+```

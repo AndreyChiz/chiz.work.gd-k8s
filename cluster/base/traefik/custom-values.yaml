@@ -1,0 +1,39 @@
+# cluster/base/traefik/custom-values.yaml
+
+service:
+  type: NodePort
+  ports:
+    web:
+      port: 80
+      nodePort: 30001
+    websecure:
+      port: 443
+      nodePort: 30000
+    dashboard:
+      port: 8080
+      nodePort: 30002
+
+deployment:
+  replicas: 1
+  serviceAccount:
+    create: true
+    name: traefik
+  additionalArguments:
+    - "--api.dashboard=true"
+    - "--api.insecure=true"
+    - "--entrypoints.web.address=:80"
+    - "--entrypoints.websecure.address=:443"
+    - "--providers.kubernetescrd"
+    - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
+    - "--certificatesresolvers.myresolver.acme.httpchallenge.entryPoint=web"
+    - "--certificatesresolvers.myresolver.acme.email=andrey.chizhov.dev@gmail.com"
+    - "--certificatesresolvers.myresolver.acme.storage=/data/acme.json"
+    - "--log.level=DEBUG"
+    - "--accesslog=true"
+
+persistence:
+  enabled: true
+  size: 50Mi
+  storageClass: traefik-static
+  mountPath: /data
+  accessMode: ReadWriteOnce

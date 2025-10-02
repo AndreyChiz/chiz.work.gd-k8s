@@ -2,9 +2,7 @@
 ### installation:
 
 ```sh
-helm install argocd ./cluster/base/argo-cd \
-  --namespace argocd \
-  -f ./cluster/base/argo-cd/values.yaml
+helm install argocd cluster/base/argo-cd/ -n argocd --create-namespace
 
 kubectl apply -f base-apps.yaml -n argocd  
 ```
