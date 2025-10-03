@@ -14,7 +14,7 @@ ports:
     protocol: TCP
     nodePort: 30001 # 👈 свой NodePort
 
-  websecure:
+  websecure:  
     port: 8443
     expose:
       default: true

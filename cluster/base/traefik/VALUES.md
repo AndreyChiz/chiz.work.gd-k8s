@@ -174,7 +174,7 @@ Kubernetes: `>=1.22.0-0`
 | ingressRoute.dashboard.labels | object | `{}` | Additional ingressRoute labels (e.g. for filtering IngressRoute by custom labels) |
 | ingressRoute.dashboard.matchRule | string | `"PathPrefix(`/dashboard`) || PathPrefix(`/api`)"` | The router match rule used for the dashboard ingressRoute |
 | ingressRoute.dashboard.middlewares | list | `[]` | Additional ingressRoute middlewares (e.g. for authentication) |
-| ingressRoute.dashboard.services | list | `[{"kind":"TraefikService","name":"api@internal"}]` | The internal service used for the dashboard ingressRoute |
+| ingressRoute.dashboard.services | list | `        ` | The internal service used for the dashboard ingressRoute |
 | ingressRoute.dashboard.tls | object | `{}` | TLS options (e.g. secret containing certificate) |
 | ingressRoute.healthcheck.annotations | object | `{}` | Additional ingressRoute annotations (e.g. for kubernetes.io/ingress.class) |
 | ingressRoute.healthcheck.enabled | bool | `false` | Create an IngressRoute for the healthcheck probe |
