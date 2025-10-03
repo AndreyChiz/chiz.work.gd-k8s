@@ -7,9 +7,9 @@ spec:
   project: default
 
   source:
-    repoURL: "file:///home/achi/development/chiz.work.gd/chiz.work.gd-k8s"
+    repoURL: "https://github.com/AndreyChiz/chiz.work.gd-GitOps"
     targetRevision: main
-    path: cluster/base/base-apps-storage
+    path: cluster/base/base-applications-storages
 
   destination:
     server: "https://kubernetes.default.svc"
