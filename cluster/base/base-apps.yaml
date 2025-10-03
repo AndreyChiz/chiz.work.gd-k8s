@@ -3,21 +3,25 @@ kind: Application
 metadata:
   name: base-apps
   namespace: argocd
+
 spec:
   project: default
   source:
     repoURL: "https://github.com/AndreyChiz/chiz.work.gd-GitOps"
     targetRevision: main
-    path: "cluster/base/applications" # берёт только *.yaml в этой папке
+    path: "cluster/base/applications"
+
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
+
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
-      - PruneLast=true
-      - ApplyOutOfSyncOnly=true
-      - Validate=true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m

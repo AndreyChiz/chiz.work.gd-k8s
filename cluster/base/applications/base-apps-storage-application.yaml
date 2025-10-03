@@ -7,15 +7,26 @@ spec:
   project: default
 
   source:
-    repoURL: 'file:///home/achi/development/chiz.work.gd/chiz.work.gd-k8s'
+    repoURL: "file:///home/achi/development/chiz.work.gd/chiz.work.gd-k8s"
     targetRevision: main
     path: cluster/base/base-apps-storage
 
   destination:
-    server: 'https://kubernetes.default.svc'
+    server: "https://kubernetes.default.svc"
     namespace: default
 
   syncPolicy:
     automated:
-      prune: true        
-      selfHeal: true     
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - PruneLast=true
+      - ApplyOutOfSyncOnly=true
+      - Validate=true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m

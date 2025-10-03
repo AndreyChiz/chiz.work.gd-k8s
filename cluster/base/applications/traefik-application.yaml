@@ -13,9 +13,11 @@ spec:
     helm:
       valueFiles:
         - custom-values.yaml
+        
   destination:
     server: https://kubernetes.default.svc
     namespace: traefik
+
   syncPolicy:
     automated:
       prune: true
