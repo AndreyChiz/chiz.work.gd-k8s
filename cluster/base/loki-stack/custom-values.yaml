@@ -1,0 +1,38 @@
+loki:
+  enabled: true
+  persistence:
+    enabled: true
+    size: 100Mi # PVC размер
+    storageClassName: loki-storage
+    accessModes:
+      - ReadWriteOnce
+    mountPath: /data/loki
+
+  config:
+    limits_config:
+      retention_period: 48h # 2 дня
+
+    chunk_target_size: 1048576 # 1 MB на чанк
+    max_chunk_age: 1h # закрываем чанк через 1 час
+
+    table_manager:
+      retention_deletes_enabled: true
+      retention_period: 48h # удаляем все чанки старше 2 дней
+
+    schema_config:
+      configs:
+        - from: 2020-10-24
+          store: boltdb-shipper
+          object_store: filesystem
+          schema: v11
+          index:
+            prefix: index_
+            period: 24h
+
+    storage_config:
+      boltdb_shipper:
+        active_index_directory: /data/loki/index
+        cache_location: /data/loki/cache
+        shared_store: filesystem
+      filesystem:
+        directory: /data/loki/chunks
