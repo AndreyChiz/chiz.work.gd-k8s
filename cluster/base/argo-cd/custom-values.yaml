@@ -17,4 +17,12 @@ server:
     nodePortHttps: 30443
 
   ingress:
-    enabled: false  # включи true, если будешь делать Ingress/Traefik/Nginx
+    enabled: false # включи true, если будешь делать Ingress/Traefik/Nginx
+
+repositories:
+  grafana:
+    url: https://grafana.github.io/helm-charts
+    type: helm
+  prometheus-community:
+    url: https://prometheus-community.github.io/helm-charts
+    type: helm
