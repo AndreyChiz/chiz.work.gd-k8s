@@ -13,21 +13,21 @@ spec:
             path: cluster/base/helm-charts/prometheus
           - name: loki-stack
             path: cluster/base/helm-charts/loki-stack
-          - name: alertmanager
-            path: cluster/base/helm-charts/prometheus/charts/alertmanager
+          #          - name: alertmanager
+          #           path: cluster/base/helm-charts/prometheus/charts/alertmanager
           - name: metrics-server
             path: cluster/base/helm-charts/metrics-server
           - name: traefik
             path: cluster/base/helm-charts/traefik
   template:
     metadata:
-      name: '{{name}}'
+      name: "{{name}}"
     spec:
       project: default
       source:
         repoURL: "https://github.com/AndreyChiz/chiz.work.gd-GitOps"
         targetRevision: main
-        path: '{{path}}'
+        path: "{{path}}"
         helm:
           valueFiles:
             - custom-values.yaml

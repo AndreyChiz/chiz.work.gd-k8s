@@ -17,7 +17,7 @@ server:
 alertmanager:
   persistentVolume:
     enabled: true
-    storageClassName: base-apps-storage
+    storageClassName: alertmanaget-sc
     accessModes:
       - ReadWriteOnce
     size: 100Mi
