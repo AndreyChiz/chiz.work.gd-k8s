@@ -21,7 +21,6 @@ loki:
     jsonData: "{}"
     uid: ""
 
-
 promtail:
   enabled: true
   config:
@@ -34,7 +33,7 @@ fluent-bit:
   enabled: false
 
 grafana:
-  enabled: false
+  enabled: true
   sidecar:
     datasources:
       label: ""
@@ -45,7 +44,7 @@ grafana:
     tag: 10.3.3
 
 prometheus:
-  enabled: false
+  enabled: true
   isDefault: false
   url: http://{{ include "prometheus.fullname" .}}:{{ .Values.prometheus.server.service.servicePort }}{{ .Values.prometheus.server.prefixURL }}
   datasource:
@@ -70,7 +69,7 @@ filebeat:
         hosts: ["logstash-loki:5044"]
 
 logstash:
-  enabled: false
+  enabled: true
   image: grafana/logstash-output-loki
   imageTag: 1.0.1
   filters:
