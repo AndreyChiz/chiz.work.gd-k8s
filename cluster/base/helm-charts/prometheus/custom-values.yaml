@@ -18,8 +18,7 @@ alertmanager:
   enabled: true
 
   persistence:
-    enabled: true
-
+    enabled: false
     # Укажи storageClass, если нужно привязать к конкретному
     # storageClass: alertmanager-sc
 
