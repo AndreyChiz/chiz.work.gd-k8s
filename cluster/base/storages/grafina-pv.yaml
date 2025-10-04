@@ -4,7 +4,7 @@ metadata:
   name: grafana-pv
 spec:
   capacity:
-    storage: 100Mi
+    storage: 200Mi
   accessModes:
     - ReadWriteOnce
   storageClassName: base-apps-storage
