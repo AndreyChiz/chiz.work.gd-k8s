@@ -1,7 +1,7 @@
 server:
   persistentVolume:
     enabled: true
-    storageClassName: base-apps-storage
+    storageClassName:  prometeos-sc
     accessModes:
       - ReadWriteOnce
     size: 500Mi  # минимальный PVC

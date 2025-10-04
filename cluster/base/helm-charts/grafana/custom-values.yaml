@@ -1,6 +1,6 @@
 persistence:
   enabled: true
-  storageClassName: base-apps-storage # твой SC
+  storageClassName: grafina-sc # твой SC
   accessModes:
     - ReadWriteOnce
   size: 100Mi # минимальный PVC

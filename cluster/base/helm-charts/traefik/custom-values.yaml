@@ -55,6 +55,6 @@ deployment:
 persistence:
   enabled: true
   size: 50Mi
-  storageClass: base-apps-storage
+  storageClass: trefeik-sc
   mountPath: /data
   accessMode: ReadWriteOnce
