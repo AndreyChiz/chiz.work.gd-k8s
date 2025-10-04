@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: "https://github.com/AndreyChiz/chiz.work.gd-GitOps"
     targetRevision: main
-    path: "cluster/base/traefik"
+    path: "cluster/base/helm-charts/traefik"
     helm:
       valueFiles:
         - custom-values.yaml

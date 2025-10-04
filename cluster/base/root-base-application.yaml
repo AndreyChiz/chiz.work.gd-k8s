@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: loki-atack
+  name: root-base-application
   namespace: argocd
 
 spec:
@@ -9,24 +9,16 @@ spec:
   source:
     repoURL: "https://github.com/AndreyChiz/chiz.work.gd-GitOps"
     targetRevision: main
-    path: "cluster/base/loki-stack"
-    helm:
-      valueFiles:
-        - custom-values.yaml
-        
+    path: "cluster/base/applications"
+
   destination:
     server: https://kubernetes.default.svc
-    namespace: loki-atack
+    namespace: argocd
 
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
-      - PruneLast=true
-      - ApplyOutOfSyncOnly=true
-      - Validate=true
     retry:
       limit: 5
       backoff:
