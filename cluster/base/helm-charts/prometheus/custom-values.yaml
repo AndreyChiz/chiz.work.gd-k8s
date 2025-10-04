@@ -1,10 +1,10 @@
 server:
   persistentVolume:
     enabled: true
-    storageClassName:  prometeos-sc
+    storageClassName: prometeos-sc
     accessModes:
       - ReadWriteOnce
-    size: 500Mi  # минимальный PVC
+    size: 500Mi # минимальный PVC
   resources:
     limits:
       cpu: 200m
@@ -12,8 +12,4 @@ server:
     requests:
       cpu: 100m
       memory: 128Mi
-  retention: "2d"  # минимальный срок хранения метрик
-
-alertmanager:
-  enabled: true
-
+  retention: "2d" # минимальный срок хранения метрик
