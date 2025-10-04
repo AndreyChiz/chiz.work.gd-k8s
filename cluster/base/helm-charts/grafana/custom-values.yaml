@@ -3,7 +3,7 @@ persistence:
   storageClassName: base-apps-storage # твой SC
   accessModes:
     - ReadWriteOnce
-  size: 200Mi  # минимальный PVC
+  size: 100Mi # минимальный PVC
   annotations: {}
 
 resources:
