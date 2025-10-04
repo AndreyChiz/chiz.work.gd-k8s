@@ -15,16 +15,5 @@ server:
   retention: "2d"  # минимальный срок хранения метрик
 
 alertmanager:
-  persistentVolume:
-    enabled: true
-    storageClassName: alertmanaget-sc
-    accessModes:
-      - ReadWriteOnce
-    size: 100Mi
-  resources:
-    limits:
-      cpu: 100m
-      memory: 128Mi
-    requests:
-      cpu: 50m
-      memory: 64Mi
+  enabled: true
+
