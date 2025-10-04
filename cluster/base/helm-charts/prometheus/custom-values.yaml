@@ -1,0 +1,30 @@
+server:
+  persistentVolume:
+    enabled: true
+    storageClassName: base-apps-storage
+    accessModes:
+      - ReadWriteOnce
+    size: 500Mi  # минимальный PVC
+  resources:
+    limits:
+      cpu: 200m
+      memory: 256Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+  retention: "2d"  # минимальный срок хранения метрик
+
+alertmanager:
+  persistentVolume:
+    enabled: true
+    storageClassName: base-apps-storage
+    accessModes:
+      - ReadWriteOnce
+    size: 100Mi
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi

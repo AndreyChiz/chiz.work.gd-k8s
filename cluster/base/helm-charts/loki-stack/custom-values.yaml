@@ -1,12 +1,5 @@
 loki:
   enabled: true
-  persistence:
-    enabled: true
-    size: 100Mi # PVC размер
-    storageClassName: loki-storage
-    accessModes:
-      - ReadWriteOnce
-    mountPath: /data/loki
 
   config:
     limits_config:
@@ -36,3 +29,11 @@ loki:
         shared_store: filesystem
       filesystem:
         directory: /data/loki/chunks
+
+    persistence:
+      enabled: true
+      size: 100Mi # PVC размер
+      storageClassName: loki-storage
+      accessModes:
+        - ReadWriteOnce
+      mountPath: /data/loki

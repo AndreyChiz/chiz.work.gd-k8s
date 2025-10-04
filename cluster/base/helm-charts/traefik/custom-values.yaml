@@ -55,6 +55,6 @@ deployment:
 persistence:
   enabled: true
   size: 50Mi
-  storageClass: traefik-static
+  storageClass: base-apps-storage
   mountPath: /data
   accessMode: ReadWriteOnce

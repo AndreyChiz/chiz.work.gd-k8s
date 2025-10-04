@@ -5,17 +5,19 @@ metadata:
   namespace: argocd
 spec:
   project: default
-
   source:
     repoURL: "https://github.com/AndreyChiz/chiz.work.gd-GitOps"
     targetRevision: main
     path: "cluster/base/helm-charts/metrics-server"
+    helm:
+      valueFiles:
+        - custom-values.yaml
 
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
-
-  syncPolicy:
+    
+syncPolicy:
     automated:
       prune: true
       selfHeal: true

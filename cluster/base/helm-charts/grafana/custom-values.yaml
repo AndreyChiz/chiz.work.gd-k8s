@@ -1,0 +1,20 @@
+persistence:
+  enabled: true
+  storageClassName: loki-storage  # твой SC
+  accessModes:
+    - ReadWriteOnce
+  size: 200Mi  # минимальный PVC
+  annotations: {}
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi
+
+adminUser: admin
+adminPassword: admin
+ingress:
+  enabled: false
