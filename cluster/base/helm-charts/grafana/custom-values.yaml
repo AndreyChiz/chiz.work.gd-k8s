@@ -1,6 +1,6 @@
 persistence:
   enabled: true
-  storageClassName: loki-storage  # твой SC
+  storageClassName: base-apps-storage # твой SC
   accessModes:
     - ReadWriteOnce
   size: 200Mi  # минимальный PVC

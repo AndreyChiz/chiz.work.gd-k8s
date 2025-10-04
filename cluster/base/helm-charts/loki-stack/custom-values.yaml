@@ -33,7 +33,7 @@ loki:
     persistence:
       enabled: true
       size: 100Mi # PVC размер
-      storageClassName: loki-storage
+      storageClassName: base-apps-storage
       accessModes:
         - ReadWriteOnce
       mountPath: /data/loki
