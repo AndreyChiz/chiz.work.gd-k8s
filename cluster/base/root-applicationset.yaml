@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-applications
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/AndreyChiz/chiz.work.gd-GitOps"
+    targetRevision: main
+    path: cluster/base/applications
+    # directory: {}   # поднимает все манифесты в папке
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

@@ -1,14 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: base-apps-set
+  name: helm-applications
   namespace: argocd
 spec:
   generators:
     - list:
         elements:
-          - name: base-applications-storages
-            path: cluster/base/base-applications-storages
           - name: grafana
             path: cluster/base/helm-charts/grafana
           - name: prometheus
@@ -35,8 +33,19 @@ spec:
             - custom-values.yaml
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{name}}'
+        # namespace убран, будет использовать namespace из чарта
       syncPolicy:
         automated:
           prune: true
           selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+          - PruneLast=true
+          - ApplyOutOfSyncOnly=true
+          - Validate=true
+        retry:
+          limit: 5
+          backoff:
+            duration: 5s
+            factor: 2
+            maxDuration: 3m
