@@ -13,3 +13,21 @@ server:
       cpu: 100m
       memory: 128Mi
   retention: "2d" # минимальный срок хранения метрик
+
+alertmanager:
+  enabled: true
+
+  persistence:
+    enabled: true
+
+    # Укажи storageClass, если нужно привязать к конкретному
+    # storageClass: alertmanager-sc
+
+    accessModes:
+      - ReadWriteOnce
+    size: 100Mi
+
+    annotations: {}
+    labels: {}
+
+    emptyDir: {}
