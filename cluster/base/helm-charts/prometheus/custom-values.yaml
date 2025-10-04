@@ -1,6 +1,6 @@
 server:
   persistentVolume:
-    enabled: true
+    enabled: false
     storageClassName: prometeos-sc
     accessModes:
       - ReadWriteOnce
