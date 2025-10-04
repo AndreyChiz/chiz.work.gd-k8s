@@ -30,14 +30,9 @@ spec:
         path: "{{path}}"
         helm:
           valueFiles:
+            - values.yaml
             - custom-values.yaml
-          repositories: # <-- добавлено
-            - name: grafana
-              url: https://grafana.github.io/helm-charts
-            - name: prometheus-community
-              url: https://prometheus-community.github.io/helm-charts
-            - name: elastic
-              url: https://helm.elastic.co
+
       destination:
         server: https://kubernetes.default.svc
         # namespace убран, будет использовать namespace из чарта
